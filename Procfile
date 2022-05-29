@@ -1,0 +1,1 @@
+web: gunicorn WordScrabble.wsgi --log-file -
