@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+<h1>Enter a word</h1>
+
+<h3>Rules :-</h3>
+<p>
+Word Must be of 3 character minimum and 6 character maximum.<br>
+Word Must be able to Permutate and create minimum 3 possible meaningful word.<br>
+</p>
+
+
+
+    <form action="/givechallengesubmit/" method="POST">
+        {% csrf_token %}
+       
+
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Enter Your Word" name="WordToPlay" value="" minlength="3" maxlength="6"><br><br>
+                    
+                    
+                    
+              
+        <br>
+       
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <center><input type="submit" class="btn btn-dark" value="test"></center>
+                </div>
+            </div>
+        
+    </form>
+
+
+
+    {% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% block content%}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+{% endfor %}
+{% endif %}
+<style>
+
+	</style>
+<div style="background-image: url('/media/bg6.jpg'); background-repeat:no-repeat;background-size:cover;  height:600px; width: 100;">
+
+ <br>
+        <br>
+        <br>
+         <br>
+       
+        	
+        <div class="col-12">
+        	
+        <div class="container" style="width:50%;background-color:white;border-radius:10px;" >
+        	<u><h3 style="color:white;text-align:center;background-color: black;"><b>Unscrambler and Scrabble Word Finder Word Unscramble</b></u></h3>
+        	<br>
+        	<br>
+         <form class="form-control" action="/WordScrabble/" method="POST">
+         	{%csrf_token%}
+        <center><h3 style="color:white;background-color:grey;">Word Unscrambler</h3></center>
+        <input type="text" class="form-control" name="Word" placeholder="Enter letters upto 12 (preferably 7)" maxlength="12" required >
+        <br>
+      
+        <center>
+        <button type="submit" class="btn btn-outline-dark">Find Words</button></center>
+    </br>
+
+        </div>
+</form>
+
+
+
+</br>
+
+
+
+
+
+
+
+
+
+
+<br>
+	
+</div>
+<br>
+{% endblock %}

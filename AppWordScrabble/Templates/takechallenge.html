@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+<h1>Take Challenge Page</h1>
+<table>
+    <tr>
+    <th>Word To Play</th>
+    <th>Challenged By</th>
+   
+    <th>Played By</th>
+    <th>Current Top Score</th>
+    <th>Take Challenge?</th>
+
+</tr>
+{% for a in challengesq%}
+{% if a.ChallengedBy != cplayer %}
+<tr>
+    <th>{{a.WordToPlay}}</th>
+    <th>{{a.ChallengedBy}}</th>
+   
+    <th>{{a.PlayedBy}}</th>
+    <th>{{a.ScoreGained}}</th>
+    <th><a href="{% url 'playchallenge' a.id %}"><button>Play</button></a></th>
+
+
+</tr>
+{% endif %}
+{% endfor %}
+</table>
+
+    {% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+<h1>LEADERBOARD</h1>
+<table>
+    <tr>
+    <th>Word To Play</th>
+    <th>Challenged By</th>
+  
+    <th>Played By</th>
+    <th>Current Top Score</th>
+
+</tr>
+{% for a in challengesq%}
+<tr>
+    <th>{{a.WordToPlay}}</th>
+    <th>{{a.ChallengedBy}}</th>
+  
+    <th>{{a.PlayedBy}}</th>
+    <th>{{a.ScoreGained}}</th>
+
+
+</tr>
+{% endfor %}
+</table>
+
+    {% endblock %}

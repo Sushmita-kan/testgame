@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% block content%}
+
+{% if resultdata %}
+{% for k,y in resultdata.items %}
+{{k}} : {{y}} <br>
+{% endfor %}
+{% endif %}
+
+
+<h1>Your Score is {{score}}</h1>
+<h1>
+{% if congrats %}
+{{congrats}}
+{% endif %}
+</h1>
+
+<h1>
+{% if sorry %}
+{{sorry}}
+{% endif %}
+
+</h1>
+<form action="/challengetab/" method="GET">
+    {% csrf_token %}
+   
+
+            
+          
+    <br>
+   
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <center><input type="submit" class="btn btn-dark" value="play again"></center>
+                
+            </div>
+        </div>
+    
+</form>
+
+<form action="/base/" method="GET">
+    {% csrf_token %}
+   
+
+            
+          
+    <br>
+   
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <center><input type="submit" class="btn btn-dark" value="Quit"></center>
+                
+            </div>
+        </div>
+    
+</form>
+{% endblock %}

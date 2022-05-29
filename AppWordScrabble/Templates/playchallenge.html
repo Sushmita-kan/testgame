@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+<h1>Create 3 word's using - {{wordchallenged}}</h1>
+
+<h3>Rules :-</h3>
+<p>
+For each correct answer, Score will be increased by the length of your answer.<br>
+For each incorrect or repeated answer, Score will be decreased by -1.<br>
+Answer should minimum of length 2.
+</p>
+
+
+
+    <form action="/challengecheck/" method="POST">
+        {% csrf_token %}
+       
+
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Answer 1" name="U_input1" value=""><br><br>
+                    
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Answer 2" name="U_input2" value=""> <br><br>
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Answer 3" name="U_input3" value=""> <br><br>
+                    
+                    
+              
+        <br>
+       
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <center><input type="submit" class="btn btn-dark" value="test"></center>
+                </div>
+            </div>
+            <center><input type="text" class="form-control" id="floatingInput" placeholder="wordchallenged" name="wordchallenged" value={{wordchallenged}} readonly> </center><br><br>
+
+    </form>
+
+
+
+    {% endblock %}
